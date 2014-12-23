@@ -62,46 +62,44 @@
     </section>
     <section id="start-diet">
       <div class="row">
-        <div class="small-7 small-centered columns">
-          <h3>You’re Ready to Start the Mug Diet</h3>
+        <div class="title small-centered columns">
+          <h4>You’re Ready to Start the Mug Diet</h4>
         </div>
-        <div class="small-7 small-centered columns calculator red-left">
+        <div class="small-centered columns container calculator red-left">
           <div class="heading"><i>1</i><span>Fill out your Information</span></div>
             <div class="row">
-              <div class="large-4 columns">
+              <div class="large-3 columns">
                 <label>Age<i class="required">&#42;</i>
                   <input type="text" required pattern="number"/>
                 </label>
               </div>
-              <div class="large-4 columns">
+              <div class="large-5 columns">
                 <label>Gender<i class="required">&#42;</i></label>
                 <div class="switch left">
                   <input id="gender_male" type="radio" name="gender">
                   <label for="gender_male">Male</label>
                 </div> 
-                <div class="switch left">
+                <div class="switch right">
                   <input id="gender_female" class="right" type="radio" name="gender">
                   <label for="gender_female">Female</label>
                 </div>
               </div>
               <div class="large-4 columns">
-                <div class="row collapse">
-                  <label>Height<i class="required">&#42;</i></label>
-                  <div class="small-9 columns">
-                    <input type="text" required pattern="number"/>
-                  </div>
-                </div>
+                <label>Height<i class="required">&#42;</i>
+                  <input type="text" class="height" required pattern="number"/>
+                </label>
               </div>
             </div>
             <div class="row">
-              <div class="large-6 columns">
+              <div class="large-4 columns">
                 <label>Current Weight<i class="required">&#42;</i>
                   <input type="text" required pattern="number"/>
                 </label>
               </div>
-              <div class="large-6 columns">
+              <div class="large-8 columns">
                 <label>Activity Level<i class="required">&#42;</i>
                   <select>
+                    <option value="husker">Choose One</option>
                     <option value="husker">Husker</option>
                     <option value="starbuck">Starbuck</option>
                     <option value="hotdog">Hot Dog</option>
@@ -116,16 +114,19 @@
               </div>
             </div>
           </div>
-        <div class="small-7 small-centered columns calculator red-left">
+        <div class="small-6 small-centered columns container result red-left">
           <div class="heading"><i>2</i><span>Purchase Your Mug</span></div>
-          <div class="row">       
+          <div class="row">
             <div class="large-4 columns">
-              <label>Your Mug Size
-                <input type="text" />
-              </label>   
+              <label>Your Mug Size</label>   
             </div>
-            <div class="large-8 columns">
-              <a href="#" class="button large right">Buy Your Mug</a>
+          </div>
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="mug-size-display"></div>
+            </div>
+            <div class="large-9 columns left">
+              <a href="#" class="button large">Buy Your Mug</a>
             </div>
           </div>
         </div>

@@ -1,12 +1,14 @@
-html {
-	width: 100%;
-	background: white;
-}
+$img-path: "/img/";
 
 $mug-pink: #f7d4d6;
 $mug-red: #DB4646;
 $mug-tan: #F0E9E9;
 $mug-brown: #735858;
+
+html {
+	width: 100%;
+	background: white;
+}
 
 #heading {
 	height: 107px;
@@ -55,20 +57,20 @@ $mug-brown: #735858;
 	margin-left: -31px;
 	display: block;
 	text-align: center;
-	background-image: url("/img/scroll-arrow.png");
+	background-image: url(#{$img-path}scroll-arrow.png);
 
 	@media #{$medium-up} {bottom: 110px;}
 }
 
 #call-to-action {
 	min-height: 560px;
-	background-image: url("/img/call-to-action-mobile-background.jpg");
+	background-image: url(#{$img-path}call-to-action-mobile-background.jpg);
 	background-size: cover;
 	background-position: top;
 
 	@media #{$medium-up} {
 		min-height: 652px;
-		background-image: url("/img/call-to-action-background.jpg");
+		background-image: url(#{$img-path}call-to-action-background.jpg);
 	}
 
 	.content {
@@ -168,7 +170,7 @@ $mug-brown: #735858;
 #how-it-works {
 	min-height: 682px;
 	overflow: hidden;
-	background: url("/img/blank-cup-large.jpg") no-repeat -70px 220px;
+	background: url(#{$img-path}blank-cup-large.jpg) no-repeat -70px 220px;
 
 	@media #{$medium-up} {
 		min-height: 552px;
@@ -184,7 +186,7 @@ $mug-brown: #735858;
 			right: -188px;
 			top: 57px;
 			position: absolute;
-			background-image: url("/img/blank-cup-large.jpg");
+			background-image: url(#{$img-path}blank-cup-large.jpg);
 			z-index: 0;
 		}
 	}
@@ -237,7 +239,7 @@ $mug-brown: #735858;
 				margin-bottom: 20px;
 				padding-top: 115px;
 				display: inline-block;
-				background: url("/img/white-mug-oval.png") no-repeat;
+				background: url(#{$img-path}white-mug-oval.png) no-repeat;
 				background-size: 100%;
 				text-align: center;
 				font-size: 0.9rem;
@@ -254,7 +256,7 @@ $mug-brown: #735858;
 				&.any-cup {
 					margin-right: 6px;
 					color: #E47225;
-					span {background-image: url("/img/any-cup.png");}
+					span {background-image: url(#{$img-path}any-cup.png);}
 
 					@media #{$medium-up} {
 						margin-right: 0;
@@ -264,7 +266,7 @@ $mug-brown: #735858;
 				&.greens-cup {
 					margin-right: 6px;
 					color: #8CC63F;
-					span {background-image: url("/img/greens-cup.png");}
+					span {background-image: url(#{$img-path}greens-cup.png);}
 
 					@media #{$medium-up} {
 						margin-left: 35px;
@@ -273,7 +275,7 @@ $mug-brown: #735858;
 
 				&.caloric-cup {
 					color: #58A2B9;
-					span {background-image: url("/img/caloric-cup.png");}
+					span {background-image: url(#{$img-path}caloric-cup.png);}
 
 					@media #{$medium-up} {
 						display: block;
@@ -284,16 +286,16 @@ $mug-brown: #735858;
 
 				span {
 					position: absolute;
-					top: 28px;
-					left: 13px;
+					top: 38px;
+					left: 25px;
 					width: 47px;
 					height: 34px;
 					display: block;
 					background-size: 100%;
 
 					@media #{$medium-up} {
-						top: 50px;
-						left: 28px;
+						top: 28px;
+						left: 13px;
 						width: 87px;
 						height: 64px;
 					}
@@ -305,55 +307,129 @@ $mug-brown: #735858;
 
 #start-diet {
 	min-height: 914px;
-	.calculator {
+
+	.title {
+		margin-top: 30px;
+		@include grid-column(
+			$columns: 12,
+			$center:true
+		);
+		color: $mug-brown;
+		text-align: center;
+		@media #{$medium-up} {
+			@include grid-column(
+				$columns: 6,
+				$center:true
+			);
+		}
+	}
+
+	.heading {
+		position: relative;
+		left: -15px;
+
+		i {
+			display: inline-block;
+			width: 47px;
+			height: 47px;
+			padding: 11px 3px 10px 0;
+			text-align: center;
+			color: white;
+			background-color: $mug-red;
+		}
+
+		span {
+			padding-left: 10px;
+			color: $mug-red;
+		}
+	}
+
+	.required {
+		color: $mug-red;
+	}
+
+	.container {
 		margin-top: 40px;
+		margin-bottom: 40px;
 		background: $mug-tan;
 		min-height: 200px;
 
-		.heading {
-			position: relative;
-			left: -15px;
+		@include grid-column(
+			$columns: 12,
+			$center:true
+		);
 
-			i {
-				display: inline-block;
-				width: 47px;
-				height: 47px;
-				padding: 11px 3px 10px 0;
-				text-align: center;
-				color: white;
-				background-color: $mug-red;
-			}
-
-			span {
-				padding-left: 10px;
-				color: $mug-red;
-			}
+		@media #{$medium-up} {
+			margin-bottom: 0;
+			@include grid-column(
+				$columns: 6,
+				$center:true
+			);
 		}
+	}
 
+	.button {
+		background-color: $mug-red;
+		border: none;
+	}	
 
-		.button {
-			background-color: $mug-red;
-			border: none;
-			// &:hover,&:focus, &:hover, &:focus {
-
-			// }
-		}
+	.calculator {
+		margin-top: 20px;
 
 		input, select {
+			height: 3em;
 			border: none;
+			background: white;
 			border-top: 3px solid $mug-pink;
+			box-shadow: none;
+
+			&:focus, &:hover {
+				background: white;
+			}
+
+			.height {
+				width: 6.65em;
+			}
+
+			&.row {
+				padding: .8rem 1rem .5rem;
+			}
+		}
+
+		.switch  {
+
+			label {
+
+				height: 2.5rem;
+				width: 4.6rem;
+
+				&:after {
+					top: 0;
+					height: 2.5rem;
+					width: 4.6rem;
+				}
+			}
+		}
+	}
+
+	.result {
+		.button {
+			padding-top: .8rem;
+			padding-right: 4.25rem;
+			padding-left: 4.25rem;
+			padding-bottom: .7rem;
+			margin-left: 22px;
+		}
+
+		.mug-size-display {
+			width: 9em;
+			height: 3em;
+			background-color: white;
 			@include border-radius(3px);
 		}
 
-		.required {
-			color: $mug-red;
-		}
-
-		.switch label {
-			&:after {
-				width: 2.4rem;
-				height: 2rem;
-			}
+		&.row {
+			padding: .8rem 1rem .5rem;
 		}
 	}
 }

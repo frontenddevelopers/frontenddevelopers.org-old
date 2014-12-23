@@ -1,5 +1,5 @@
-# Mugdiet
-## Uxiliary
+#  Treatment - Mugdiet
+###Uxiliary
 
 ## Requirements
 
