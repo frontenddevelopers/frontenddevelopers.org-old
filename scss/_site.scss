@@ -57,7 +57,7 @@ html {
 	margin-left: -31px;
 	display: block;
 	text-align: center;
-	background-image: url(#{$img-path}scroll-arrow.png);
+	background: url(#{$img-path}scroll-arrow.png);
 
 	@media #{$medium-up} {bottom: 110px;}
 }
@@ -294,8 +294,8 @@ html {
 					background-size: 100%;
 
 					@media #{$medium-up} {
-						top: 28px;
-						left: 13px;
+						top: 50px;
+						left: 28px;
 						width: 87px;
 						height: 64px;
 					}

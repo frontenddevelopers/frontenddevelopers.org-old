@@ -9112,7 +9112,7 @@ html {
   margin-left: -31px;
   display: block;
   text-align: center;
-  background-image: url(/img/scroll-arrow.png);
+  background: url(/img/scroll-arrow.png);
 }
 @media only screen and (min-width: 40.063em) {
   /* line 51, ../../scss/_site.scss */
@@ -9445,8 +9445,8 @@ html {
 @media only screen and (min-width: 40.063em) {
   /* line 287, ../../scss/_site.scss */
   #the-diet #mugs ul li span {
-    top: 28px;
-    left: 13px;
+    top: 50px;
+    left: 28px;
     width: 87px;
     height: 64px;
   }
