@@ -122,10 +122,6 @@ window.Calculator = {
 		noLossMugSize = Math.ceil(adjustedBMR / (mealsPerDay * totalCaloriesPerOunce));
 		weightLossMugSize = Math.ceil(targetCaloriesMugChange / solidCaloriesPerOunce);
 
-		weightLossMugSizeElement.html(weightLossMugSize + ' oz');
-		$('.mod_calculate').fadeOut(400, function() {
-			resultsElement.fadeIn();
-			$('.results').fadeIn();
-		});
+		weightLossMugSizeElement.html(weightLossMugSize + ' OZ').addClass('active');
 	}
 }

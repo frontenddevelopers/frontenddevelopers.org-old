@@ -9363,8 +9363,8 @@ html {
 /* line 235, ../../scss/_site.scss */
 #the-diet #mugs ul li {
   position: relative;
-  width: 31%;
-  height: 31%;
+  width: 31.8%;
+  height: 31.8%;
   margin-bottom: 20px;
   padding-top: 115px;
   display: inline-block;
@@ -9388,7 +9388,7 @@ html {
 }
 /* line 256, ../../scss/_site.scss */
 #the-diet #mugs ul li.any-cup {
-  margin-right: 6px;
+  margin-right: 2px;
   color: #E47225;
 }
 /* line 259, ../../scss/_site.scss */
@@ -9403,7 +9403,7 @@ html {
 }
 /* line 266, ../../scss/_site.scss */
 #the-diet #mugs ul li.greens-cup {
-  margin-right: 6px;
+  margin-right: 3px;
   color: #8CC63F;
 }
 /* line 269, ../../scss/_site.scss */
@@ -9485,8 +9485,9 @@ html {
 #start-diet .heading {
   position: relative;
   left: -15px;
+  margin-bottom: 22px;
 }
-/* line 331, ../../scss/_site.scss */
+/* line 332, ../../scss/_site.scss */
 #start-diet .heading i {
   display: inline-block;
   width: 47px;
@@ -9496,21 +9497,21 @@ html {
   color: white;
   background-color: #DB4646;
 }
-/* line 341, ../../scss/_site.scss */
+/* line 342, ../../scss/_site.scss */
 #start-diet .heading span {
   padding-left: 10px;
   color: #DB4646;
 }
-/* line 347, ../../scss/_site.scss */
+/* line 348, ../../scss/_site.scss */
 #start-diet .required {
   color: #DB4646;
 }
-/* line 351, ../../scss/_site.scss */
+/* line 352, ../../scss/_site.scss */
 #start-diet .container {
   margin-top: 40px;
   margin-bottom: 40px;
   background: #F0E9E9;
-  min-height: 200px;
+  min-height: 160px;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   width: 100%;
@@ -9520,7 +9521,7 @@ html {
   float: none;
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 351, ../../scss/_site.scss */
+  /* line 352, ../../scss/_site.scss */
   #start-diet .container {
     margin-bottom: 0;
     padding-left: 0.9375rem;
@@ -9532,16 +9533,20 @@ html {
     float: none;
   }
 }
-/* line 371, ../../scss/_site.scss */
+/* line 372, ../../scss/_site.scss */
 #start-diet .button {
   background-color: #DB4646;
   border: none;
 }
-/* line 376, ../../scss/_site.scss */
+/* line 377, ../../scss/_site.scss */
 #start-diet .calculator {
   margin-top: 20px;
 }
-/* line 379, ../../scss/_site.scss */
+/* line 380, ../../scss/_site.scss */
+#start-diet .calculator .height {
+  width: 27%;
+}
+/* line 384, ../../scss/_site.scss */
 #start-diet .calculator input, #start-diet .calculator select {
   height: 3em;
   border: none;
@@ -9549,47 +9554,91 @@ html {
   border-top: 3px solid #f7d4d6;
   box-shadow: none;
 }
-/* line 386, ../../scss/_site.scss */
+/* line 391, ../../scss/_site.scss */
 #start-diet .calculator input:focus, #start-diet .calculator input:hover, #start-diet .calculator select:focus, #start-diet .calculator select:hover {
   background: white;
 }
-/* line 390, ../../scss/_site.scss */
+/* line 395, ../../scss/_site.scss */
 #start-diet .calculator input .height, #start-diet .calculator select .height {
   width: 6.65em;
 }
-/* line 394, ../../scss/_site.scss */
+/* line 399, ../../scss/_site.scss */
 #start-diet .calculator input.row, #start-diet .calculator select.row {
   padding: .8rem 1rem .5rem;
 }
-/* line 401, ../../scss/_site.scss */
-#start-diet .calculator .switch label {
-  height: 2.5rem;
-  width: 4.6rem;
-}
 /* line 406, ../../scss/_site.scss */
-#start-diet .calculator .switch label:after {
-  top: 0;
-  height: 2.5rem;
-  width: 4.6rem;
+#start-diet .calculator .switch#male label {
+  width: 3rem;
+}
+/* line 408, ../../scss/_site.scss */
+#start-diet .calculator .switch#male label:after {
+  content: "MALE";
+  width: 3rem;
+}
+/* line 414, ../../scss/_site.scss */
+#start-diet .calculator .switch#female {
+  left: -8px;
 }
 /* line 416, ../../scss/_site.scss */
+#start-diet .calculator .switch#female label {
+  width: 4rem;
+}
+/* line 418, ../../scss/_site.scss */
+#start-diet .calculator .switch#female label:after {
+  content: "FEMALE";
+  width: 4rem;
+}
+/* line 425, ../../scss/_site.scss */
+#start-diet .calculator .switch input:checked + label {
+  background: #f7d4d6 url(/img/red-check.png) no-repeat 7px 10px;
+}
+/* line 427, ../../scss/_site.scss */
+#start-diet .calculator .switch input:checked + label:after {
+  left: 2.4rem;
+}
+/* line 432, ../../scss/_site.scss */
+#start-diet .calculator .switch label {
+  top: 0;
+  height: 2.5rem;
+  width: 4rem;
+}
+/* line 437, ../../scss/_site.scss */
+#start-diet .calculator .switch label:after {
+  top: 0;
+  left: 2.4rem;
+  height: 2.5rem;
+  color: black;
+  text-indent: 7px;
+  line-height: 41px;
+  font-size: .8rem;
+}
+/* line 451, ../../scss/_site.scss */
 #start-diet .result .button {
   padding-top: .8rem;
-  padding-right: 4.25rem;
-  padding-left: 4.25rem;
+  padding-right: 4.55rem;
+  padding-left: 4.55rem;
   padding-bottom: .7rem;
   margin-left: 22px;
 }
-/* line 424, ../../scss/_site.scss */
+/* line 459, ../../scss/_site.scss */
 #start-diet .result .mug-size-display {
-  width: 9em;
-  height: 3em;
-  background-color: white;
+  width: 5.2em;
+  min-height: 1.5em;
+  color: #DB4646;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  padding-left: 78px;
+  line-height: 48px;
+  font-size: 32px;
+  background-color: white;
 }
-/* line 431, ../../scss/_site.scss */
+/* line 469, ../../scss/_site.scss */
+#start-diet .result .mug-size-display.active {
+  background: white url(/img/any-cup.png) no-repeat 14px 7px;
+  background-size: 50px;
+}
+/* line 475, ../../scss/_site.scss */
 #start-diet .result.row {
   padding: .8rem 1rem .5rem;
 }

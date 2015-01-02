@@ -234,8 +234,8 @@ html {
 
 			li {
 				position: relative;
-				width: 31%;
-				height: 31%;
+				width: 31.8%;
+				height: 31.8%;
 				margin-bottom: 20px;
 				padding-top: 115px;
 				display: inline-block;
@@ -254,7 +254,7 @@ html {
 				}
 
 				&.any-cup {
-					margin-right: 6px;
+					margin-right: 2px;
 					color: #E47225;
 					span {background-image: url(#{$img-path}any-cup.png);}
 
@@ -264,7 +264,7 @@ html {
 				}
 
 				&.greens-cup {
-					margin-right: 6px;
+					margin-right: 3px;
 					color: #8CC63F;
 					span {background-image: url(#{$img-path}greens-cup.png);}
 
@@ -327,6 +327,7 @@ html {
 	.heading {
 		position: relative;
 		left: -15px;
+		margin-bottom: 22px;
 
 		i {
 			display: inline-block;
@@ -352,7 +353,7 @@ html {
 		margin-top: 40px;
 		margin-bottom: 40px;
 		background: $mug-tan;
-		min-height: 200px;
+		min-height: 160px;
 
 		@include grid-column(
 			$columns: 12,
@@ -376,6 +377,10 @@ html {
 	.calculator {
 		margin-top: 20px;
 
+		.height {
+  			width: 27%;
+		}
+
 		input, select {
 			height: 3em;
 			border: none;
@@ -398,15 +403,45 @@ html {
 
 		.switch  {
 
-			label {
+			&#male label {
+				width: 3rem;
+				&:after {
+					content: "MALE";
+					width: 3rem;
+				}
+			}
 
+			&#female {
+  				left: -8px;
+				label {
+					width: 4rem;
+					&:after {
+						content: "FEMALE";
+						width: 4rem;
+					}
+				}
+			}
+
+			input:checked + label {
+			  background: $mug-pink url(/img/red-check.png) no-repeat 7px 10px;
+			  &:after {
+				left: 2.4rem;
+			  }
+			}
+
+			label {
+				top: 0;
 				height: 2.5rem;
-				width: 4.6rem;
+				width: 4rem;
 
 				&:after {
 					top: 0;
+					left: 2.4rem;
 					height: 2.5rem;
-					width: 4.6rem;
+					color: black;
+					text-indent: 7px;
+					line-height: 41px;
+					font-size: .8rem;
 				}
 			}
 		}
@@ -415,17 +450,26 @@ html {
 	.result {
 		.button {
 			padding-top: .8rem;
-			padding-right: 4.25rem;
-			padding-left: 4.25rem;
+			padding-right: 4.55rem;
+			padding-left: 4.55rem;
 			padding-bottom: .7rem;
 			margin-left: 22px;
 		}
 
 		.mug-size-display {
-			width: 9em;
-			height: 3em;
-			background-color: white;
+			width: 5.2em;
+			min-height: 1.5em;
+			// height: 3em;
+			color: $mug-red;
 			@include border-radius(3px);
+			padding-left: 78px;
+			line-height: 48px;
+			font-size: 32px;
+			background-color: white;
+			&.active {
+				background: white url(/img/any-cup.png) no-repeat 14px 7px;
+				background-size: 50px;
+			}
 		}
 
 		&.row {
