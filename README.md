@@ -1,5 +1,5 @@
-#  Treatment - Mugdiet
-###Uxiliary
+#  Uxiliary - #frontendDevelopers - [frontenddevelopers.org](http://frontenddevelopers.org)
+This is a frontend developer community project that uses Slack.
 
 ## Requirements
 

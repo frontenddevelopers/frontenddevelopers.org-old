@@ -1,36 +1,17 @@
-// Foundation JavaScript
-// Documentation can be found at: http://foundation.zurb.com/docs
-$(document).foundation();
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-$(document).ready(function(){
-	Calculator.populateActivityLevel($('#activityLevelContainer'));
+ga('create', 'UA-58222334-1', 'auto');
+ga('send', 'pageview');
 
-	$('#computeButton').on('click', function(e) {
-		e.preventDefault();
+(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})();
 
-		var gender = parseInt($("input:radio[name=gender]:checked").val()),
-			age = parseInt($('#inputAge').val()),
-			heightFeet = parseInt($('#inputFeet').val()),
-			heightInches = parseFloat($('#inputHeight').val()),
-			weightPounds = parseFloat($('#inputWeight').val()),
-			//bmrMultiplier = parseFloat($("input:radio[name=multiplier]:checked").val()),
-			bmrMultiplier = parseFloat($("#activityLevelContainer").val()),
-			resultsElement = $('#results'),
-			weightLossMugSizeElement = $('#weightLossMugSize');
+var anchors = document.getElementsByTagName('a');
 
-		Calculator.computeSizes(weightPounds, gender, age, 0, heightInches, bmrMultiplier, resultsElement, weightLossMugSizeElement);
+for (var i = 0; i < anchors.length; i++) {
+	anchors[i].addEventListener("click", function() {
+		ga('send', 'event', 'action', 'click', this.className);
 	});
-
-	$('#scroll-icon').on('click', function() {
-		$('html, body').animate({
-			scrollTop: $('#how-it-works').offset().top
-		},'2000');
-		return false
-	});
-
-    var windowHeight = $(window).innerHeight();
-    if(windowHeight <= 800 && Modernizr.touch) {
-    	$('#call-to-action').css('min-height', (windowHeight - 107));
-    	$('#how-it-works, #the-diet, #start-diet').css('height', windowHeight);
-	}
-});
+}
