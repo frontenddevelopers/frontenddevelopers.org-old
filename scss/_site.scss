@@ -7,13 +7,13 @@ $medium-range: (40.063em, 64em);
 $medium-up: "only screen and (min-width:#{lower-bound($medium-range)})";
 
 body {
-	background: url(#{$img-path}desk-background-mobile.jpg);
+	background: url(#{$img-path}background-mobile.jpg);
 	background-size: cover;
 	background-position: center center;
 	font-weight: bold;
 
 	@media #{$medium-up} {
-		background: url(#{$img-path}desk-background.jpg);
+		background: url(#{$img-path}background.jpg);
 		background-size: cover;
 		background-position: center center;
 	}
