@@ -1,4 +1,5 @@
-#  Uxiliary - #frontendDevelopers - [frontenddevelopers.org](http://frontenddevelopers.org)
+#  Uxiliary - #frontendDevelopers
+## [frontenddevelopers.org](http://frontenddevelopers.org)
 This is a frontend developer community project that uses Slack.
 
 ## Requirements
