@@ -1,8 +1,5 @@
 {
-  "name": "mugdiet",
+  "name": "frontenddevelopers",
   "version": "0.0.1",
-  "private": "true",
-  "dependencies": {
-    "foundation": "zurb/bower-foundation"
-  }
+  "private": "true"
 }
