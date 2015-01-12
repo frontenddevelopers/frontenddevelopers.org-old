@@ -1,4 +1,4 @@
-#  Uxiliary - #frontendDevelopers
+#frontendDevelopers
 Slack frontend developer community project.
 
 ## Requirements
