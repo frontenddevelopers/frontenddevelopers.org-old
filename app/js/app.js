@@ -13,3 +13,27 @@ for (var i = 0; i < anchors.length; i++) {
 		ga('send', 'event', 'action', 'click', this.className);
 	});
 }
+
+var modal = document.querySelector('.js--modal');
+var modalOpen = document.querySelector('.js--modal-open');
+var modalClose = document.querySelector('.js--modal-close');
+
+console.log(modal);
+console.log(modalOpen);
+console.log(modalClose);
+
+var openModal = function () {
+  modal.className += " modal--open";
+}
+
+var closeModal = function () {
+  modal.className = modal.className.replace( /(?:^|\s)modal--open(?!\S)/g , '' )
+}
+
+modalOpen.addEventListener("click", function() {
+  openModal();
+});
+
+modalClose.addEventListener("click", function() {
+  closeModal();
+});
