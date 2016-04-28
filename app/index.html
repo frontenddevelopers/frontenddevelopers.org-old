@@ -14,10 +14,40 @@
   			<div class="content">
   				<h1>#frontendDevelopers</h1>
   				<h2>A <a href="http://slack.com" class="slack-clickthrough"><strong>Slack</strong></a> powered community for <br>creative developers</h2>
-  				<p><a class="typeform-share button" href="https://zachshallbetter.typeform.com/to/Ei4XtB" data-mode="1" target="_blank">Join Now!</a></p>
+  				<p><a class="signup-btn  button  js--modal-open" href="#">Join Now!</a></p>
   				<p>Already a part of the community? <a href="http://frontenddevelopers.slack.com" class="alt-signin">Sign in here.</a></p>
   			</div>
   		</div>
+      <div class="modal  js--modal">
+        <div class="modal__container">
+          <button class="modal__close-btn  js--modal-close" title="Close">×</button>
+          <form class="form" method="post" action="http://localhost:8081/signup">
+            <input type="hidden" name="extra[redirect_uri]" value="http://frontenddevelopers.org" />
+            <input type="hidden" name="extra[slack_channels]" value="C03DQ9ZJW" />
+            <input type="hidden" name="member[team]" value="frontEndDevelopers" />
+            <div class="form__field">
+              <label class="form__label" for="member_name">Your Name</label>
+              <input class="form__input" id="member_name" type="text" name="member[name]" maxlength="254" />
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="member_email">Your Email</label>
+              <input class="form__input" id="member_email" type="email" name="member[email]" maxlength="254" />
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="member_reference">How did you hear about the Frontend Developers community?</label>
+              <textarea class="form__textarea" id="member_reference" name="member[reference]" maxlength="500"></textarea>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="member_about" aria-describedby="member_about_hint">
+                Tell us a little about yourself<br>
+                <small id="member_about_hint">E.g. How long have you been a developer? Where are you from? What languages, frameworks or libraries do you work with?</small>
+              </label>
+              <textarea class="form__textarea" id="member_about" name="member[about]" maxlength="500"></textarea>
+            </div>
+            <button class="form__submit" type="submit">Join</button>
+          </form>
+        </div>
+      </div>
     </section>
     <footer>
         <p><a href="http://uxiliary.com" target="_blank" class="uxiliary-link">Uxiliary © 2015</a></p>

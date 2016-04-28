@@ -6,8 +6,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-58222334-1', 'auto');
 ga('send', 'pageview');
 
-(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})();
-
 var anchors = document.getElementsByTagName('a');
 
 for (var i = 0; i < anchors.length; i++) {
@@ -15,3 +13,27 @@ for (var i = 0; i < anchors.length; i++) {
 		ga('send', 'event', 'action', 'click', this.className);
 	});
 }
+
+var modal = document.querySelector('.js--modal');
+var modalOpen = document.querySelector('.js--modal-open');
+var modalClose = document.querySelector('.js--modal-close');
+
+console.log(modal);
+console.log(modalOpen);
+console.log(modalClose);
+
+var openModal = function () {
+  modal.className += " modal--open";
+}
+
+var closeModal = function () {
+  modal.className = modal.className.replace( /(?:^|\s)modal--open(?!\S)/g , '' )
+}
+
+modalOpen.addEventListener("click", function() {
+  openModal();
+});
+
+modalClose.addEventListener("click", function() {
+  closeModal();
+});
