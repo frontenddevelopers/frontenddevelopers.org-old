@@ -1,6 +1,5 @@
 /* eslint-disable  */
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
@@ -45,7 +44,7 @@ var config = env => ({
         exclude: /node_modules/,
         loaders: env && !env.prod
           ? 'style?sourceMap!css!sass'
-          : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'style?sourceMap!css!sass' }),
+          : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?sourceMap!sass' }),
       },
     ],
   },
@@ -62,17 +61,12 @@ var config = env => ({
     new webpack.ProvidePlugin({
       fetch: 'imports?this=>global!exports?global.fetch!isomorphic-fetch',
     }),
-    new HtmlWebpackPlugin({
-      title: '',
-      template: './app/src/index.html',
-    }),
     new webpack.NoErrorsPlugin(),
   ],
   devServer: {
     compress: true,
     historyApiFallback: true,
     host: '0.0.0.0',
-    hot: true,
     port: 8050,
     proxy: {
       '**': 'http://localhost:3000'

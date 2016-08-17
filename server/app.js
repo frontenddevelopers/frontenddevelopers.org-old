@@ -7,10 +7,14 @@ const router = new Router();
 
 router.get('/', async (req, res, next) => {
   try {
-    res.send({ yo: 'sup' });
+    res.sendFile(path.resolve('./app/src/index.html'));
   } catch (e) {
     next(e);
   }
+});
+
+router.get('/humans.txt', (req, res) => {
+  res.sendFile(path.resolve('./app/src/humans.txt'));
 });
 
 router.post('/signup', async (req, res, next) => {
