@@ -1,4 +1,4 @@
-$img-path: "/img/";
+$img-path: "../img";
 
 $fe-primary: #f60f0f;
 $fe-accent: #e64a19;
@@ -10,13 +10,13 @@ $modal--background-color: rgba(0,0,0,.8);
 $modal__container--background-color: #BFBFBE;
 
 body {
-	background: url(#{$img-path}background-mobile.jpg);
+	background: url(#{$img-path}/background-mobile.jpg);
 	background-size: cover;
 	background-position: center center;
 	font-weight: bold;
 
 	@media #{$medium-up} {
-		background: url(#{$img-path}background.jpg);
+		background: url(#{$img-path}/background.jpg);
 		background-size: cover;
 		background-position: center center;
 	}

@@ -1,0 +1,68 @@
+{
+  "name": "frontenddevelopers.org",
+  "version": "1.0.0",
+  "description": "Website for onboarding people to the frontendDevelopers Slack group",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run server:prod",
+    "server": "devtool index -w",
+    "server:prod": "node index",
+    "client": "babel-node --presets es2015 -- ./node_modules/.bin/webpack-dev-server --env.dev",
+    "build": "npm run clean && npm run build:prod",
+    "build:prod": "babel-node --presets es2015 -- ./node_modules/.bin/webpack --env.prod",
+    "clean": "rimraf app/dist",
+    "db:setup": "babel-node --presets es2015 -- ./bin/db-setup",
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frontenddevelopers.org/frontenddevelopers.org.git"
+  },
+  "keywords": [
+    "frontend",
+    "developer",
+    "slack",
+    "chat"
+  ],
+  "author": "Various",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frontenddevelopers.org/frontenddevelopers.org/issues"
+  },
+  "homepage": "https://github.com/frontenddevelopers.org/frontenddevelopers.org#readme",
+  "dependencies": {
+    "babel-preset-es2015-node6": "^0.3.0",
+    "babel-preset-stage-1": "^6.13.0",
+    "babel-register": "^6.11.6",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.14.1",
+    "querystring": "^0.2.0",
+    "rethinkdbdash": "^2.3.19"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-es2015-webpack": "^6.4.3",
+    "css-loader": "^0.23.1",
+    "devtool": "^2.0.3",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb": "^10.0.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^6.0.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta.3",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
+    "node-sass": "^3.8.0",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.1.0-beta.20",
+    "webpack-dev-server": "^2.1.0-beta.0"
+  }
+}

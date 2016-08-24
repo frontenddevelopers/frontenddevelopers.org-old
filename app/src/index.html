@@ -4,19 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Developers</title>
-    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <section>
-  		<div class="row">
-  			<div class="content">
-  				<h1>#frontendDevelopers</h1>
-  				<h2>A <a href="http://slack.com" class="slack-clickthrough"><strong>Slack</strong></a> powered community for <br>creative developers</h2>
-  				<p><a class="signup-btn  button  js--modal-open" href="#">Join Now!</a></p>
-  				<p>Already a part of the community? <a href="http://frontenddevelopers.slack.com" class="alt-signin">Sign in here.</a></p>
-  			</div>
+      <div class="row">
+        <div class="content">
+          <h1>#frontendDevelopers</h1>
+          <h2>A <a href="http://slack.com" class="slack-clickthrough"><strong>Slack</strong></a> powered community for <br>creative developers</h2>
+          <p><a class="button" href="#">Join Now!</a></p>
+          <p>Already a part of the community? <a href="http://frontenddevelopers.slack.com" class="alt-signin">Sign in here.</a></p>
+        </div>
   		</div>
       <div class="modal  js--modal">
         <div class="modal__container">
@@ -49,9 +49,36 @@
         </div>
       </div>
     </section>
+
+    <section>
+      <form method="post" action="/signup">
+        <div>
+          <label for="user_firstname">First Name</label>
+          <input id="user_firstname" type="text" name="user[firstName]" maxlength="254" />
+          <label for="user_lastname">Last Name</label>
+          <input id="user_lastname" type="text" name="user[lastName]" maxlength="254" />
+        </div>
+        <div>
+          <label for="user_email">Your Email</label>
+          <input id="user_email" type="email" name="user[email]" maxlength="254" />
+        </div>
+        <div>
+          <label for="user_reference">How did you hear about the Frontend Developers community?</label>
+          <textarea id="user_reference" name="user[reference]" maxlength="500"></textarea>
+        </div>
+        <div>
+          <label for="user_about" aria-describedby="user_about_hint">
+            Tell us a little about yourself
+            <small id="user_about_hint">E.g. How long have you been a developer? Where are you from? What languages, frameworks or libraries do you work with?</small>
+          </label>
+          <textarea id="user_about" name="user[about]" maxlength="500"></textarea>
+        </div>
+        <button type="submit">Join</button>
+      </form>
+    </section>
     <footer>
         <p><a href="http://uxiliary.com" target="_blank" class="uxiliary-link">Uxiliary © 2015</a></p>
     </footer>
-    <script src="/js/app.js"></script>
+    <script src="/assets/bundle.js"></script>
   </body>
 </html>
