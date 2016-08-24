@@ -7,9 +7,11 @@
     "start": "npm run server:prod",
     "server": "devtool index -w",
     "server:prod": "node index",
-    "client": "webpack-dev-server",
-    "build": "webpack --env.prod",
+    "client": "babel-node --presets es2015 -- ./node_modules/.bin/webpack-dev-server --env.dev",
+    "build": "npm run clean && npm run build:prod",
+    "build:prod": "babel-node --presets es2015 -- ./node_modules/.bin/webpack --env.prod",
     "clean": "rimraf app/dist",
+    "db:setup": "babel-node --presets es2015 -- ./bin/db-setup",
     "test": "ava"
   },
   "repository": {
@@ -35,6 +37,7 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.14.1",
     "querystring": "^0.2.0",
     "rethinkdbdash": "^2.3.19"
   },
@@ -42,6 +45,7 @@
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.13.2",
+    "babel-preset-es2015-webpack": "^6.4.3",
     "css-loader": "^0.23.1",
     "devtool": "^2.0.3",
     "eslint": "^3.2.2",

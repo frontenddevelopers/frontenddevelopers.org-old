@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+
+import rethink from 'rethinkdbdash';
+import settings from '../settings';
+
+const r = rethink({ silent: true });
+const db = settings.db.name;
+
+const checkDb = () =>
+  r.dbList()
+    .run()
+    .then(dbs => dbs.includes(db))
+    .then(hasDb => {
+      if (hasDb) {
+        console.log(`Database '${db}' already exists`)
+        return;
+      }
+      console.log(`Creating database '${db}'`);
+      return r.dbCreate(db).run();
+    });
+
+const checkTable = () =>
+  r.db(db).tableList()
+    .run()
+    .then(tbls => tbls.includes('users'))
+    .then(hasTbl => {
+      if (hasTbl) {
+        console.log('Users table already exists');
+        return;
+      }
+      console.log('Creating users table');
+      return r.db(db).tableCreate('users');
+    });
+
+const checkIndex = () =>
+  r.db(db).table('users').indexList()
+    .run()
+    .then(idxs => idxs.includes('email'))
+    .then(hasIdx => {
+      if (hasIdx) {
+        console.log('Email field already indexed for users table');
+        return;
+      }
+      console.log('Creating index for email in the users table');
+      return r.db(db).table('users').indexCreate('email').run();
+    });
+
+checkDb()
+  .then(checkTable)
+  .then(checkIndex)
+  .then(() => {
+    console.log('Finished setting up database');
+    process.exit(0);
+  })
+  .catch(err => {
+    console.log(`Error: ${err}`);
+    process.exit(1);
+  });

@@ -41,5 +41,8 @@ jspm_packages
 # Settings
 settings.js
 
+# Database
+rethinkdb_data
+
 # built files
 dist

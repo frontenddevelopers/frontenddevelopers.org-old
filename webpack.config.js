@@ -1,13 +1,16 @@
 /* eslint-disable  */
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
+import webpack from 'webpack';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import path from 'path';
+import settings from './settings';
 
-var SRC = path.resolve('./app/src');
-var DIST = path.resolve('./app/dist');
-var PUBLIC_PATH = '/assets/';
+const { server: { port, host } } = settings;
 
-var config = env => ({
+const SRC = path.resolve('./app/src');
+const DIST = path.resolve('./app/dist');
+const PUBLIC_PATH = '/assets/';
+
+export default env => ({
   entry: [
     './app/src/index.js',
   ],
@@ -50,7 +53,7 @@ var config = env => ({
   },
   devtool: env && env.prod ? 'source-map' : 'cheap-module-eval-source-map',
   resolve: {
-    extensions: ['', '.js', '.css'],
+    extensions: ['', '.js'],
     modules: [
       SRC,
       'node_modules'
@@ -69,9 +72,7 @@ var config = env => ({
     host: '0.0.0.0',
     port: 8050,
     proxy: {
-      '**': 'http://localhost:3000'
+      '**': `http://${host}:${port}`,
     }
   },
 });
-
-module.exports = config;
