@@ -4,7 +4,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import path from 'path';
 import settings from './settings';
 
-const { server: { port, host } } = settings;
+const { server: { port, host, proxyPort, proxyHost } } = settings;
 
 const SRC = path.resolve('./app/src');
 const DIST = path.resolve('./app/dist');
@@ -69,8 +69,8 @@ export default env => ({
   devServer: {
     compress: true,
     historyApiFallback: true,
-    host: '0.0.0.0',
-    port: 8050,
+    host: proxyHost,
+    port: proxyPort,
     proxy: {
       '**': `http://${host}:${port}`,
     }

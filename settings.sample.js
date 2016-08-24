@@ -5,6 +5,8 @@ export default {
   server: {
     host: '0.0.0.0',
     port: 8049,
+    proxyHost: '0.0.0.0',
+    proxyPort: 8050,
   },
   auth: {
     slack: process.env.SLACK_API_KEY,
