@@ -8,5 +8,9 @@ module.exports = {
     'import/no-unresolved': 0,
     'no-param-reassign': 0,
     'import/no-extraneous-dependencies': 0
+  },
+  'env': {
+    'browser': true,
+    'node': true
   }
 };

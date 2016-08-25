@@ -108,20 +108,24 @@ footer {
 .modal {
   position: fixed;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
   background-color: $modal--background-color;
-  visibility: hidden;
   opacity: 0;
-  transition: visibility 0s ease-in-out 300ms,
-              opacity 300ms ease-in-out;
+  visibility: hidden;
+  transition: opacity 300ms ease-in-out,
+              visibility 0s 300ms;
 
   &--open {
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
     transition-delay: 0s;
+    backface-visibility: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   &__container {
@@ -180,7 +184,7 @@ footer {
     border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, .5);
     background: transparent;
-    color: #008CBA;
+    //color: #008CBA;
     font-size: 1.5rem;
     font-weight: 400;
     transition: border-color 600ms ease-in-out;
