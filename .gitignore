@@ -38,6 +38,9 @@ jspm_packages
 
 .DS_Store
 
+# Sass
+.sass-cache
+
 # Settings
 settings.js
 
