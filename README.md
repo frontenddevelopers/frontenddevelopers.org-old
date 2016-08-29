@@ -10,6 +10,7 @@ A community for frontend developers on the [Slack](http://slack.com) platform.
 ## Getting Started
 
   * Copy `settings.sample.js` to `settings.js` and populate the fields in it  // TODO: create a CLI tool to handle this
+  * `npm install` to download all the dependencies
   * `npm run db:setup` will set up the database and table in RethinkDB
   * `npm run server` will start the Node server in development mode
   * `npm run client` will start `webpack-dev-server` for the frontend of the project on port 8050, which will proxy the backend.
